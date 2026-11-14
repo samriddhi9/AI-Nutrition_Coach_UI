@@ -10,4 +10,5 @@ export default defineConfig({
     tailwindcss(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+    base: '/AI-Nutrition_Coach_UI/'
 })
