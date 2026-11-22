@@ -1,77 +1,52 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Calorie Counter
 
-Currently, two official plugins are available:
+A React web app that estimates the calories in a meal from a photo. Upload an image or take one with your camera, and the app is designed to analyze it with an LLM and return a calorie estimate.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> **Status:** Work in progress. The UI is still being developed, and the AI analysis depends on a backend that is also being built.
 
-## React Compiler
+## About This Project
+This is a learning project built by Samriddhi Bhosle and her husband, Modassir, to practice new technologies together. Samriddhi builds the React frontend, and Modassir builds the Java backend. The repository is a fork so that both of us can contribute.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+As spouses, we work on one shared laptop, so some frontend commits may appear under Modassir's name. All frontend code (UI, camera and upload flow, LLM integration) is written by Samriddhi.
 
-Note: This will impact Vite dev & build performances.
+## Features
+- Upload a meal image or capture one using the device camera
+- React-based UI (in progress)
+- LLM integration for calorie estimation (works in local development only, see note below)
 
-## Expanding the ESLint configuration
+## Important Note on the Live Demo
+The live demo on GitHub Pages shows the **UI only**, and it is still in progress. The AI analysis does not work there because it needs an API key, and API keys must never be exposed in a frontend app. The correct approach is to call the LLM through a backend that keeps the key private. That Java backend is currently in progress.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
+- React
+- JavaScript
+- HTML5, CSS3
+- LLM API (integration in progress)
+- Java backend (in progress)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
+1. Clone this repository and open the project folder
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Start the app
+   ```bash
+   npm start
+   ```
+The app runs at `http://localhost:3000`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Roadmap
+- Complete the UI
+- Secure backend integration so AI analysis works in the deployed app
+- Meal history
+- Daily calorie goals
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Contributors
+- **Samriddhi Bhosle**: React frontend, UI, LLM integration
+- **Modassir** (spouse): Java backend
 
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+## Author
+Samriddhi Bhosle
